@@ -1,12 +1,9 @@
-import Age from "./Age";
+import Welcome from "./Welcome";
 
-const Welcome = ({name = <strong>Alessandro</strong>}) => {    // What happens if the name prop is a JSX expression instead of a string?
-  return (                                                          // the name will be bold
-    <>
-      <p>Welcome, {name}!</p>
-      <Age />
-    </>
-  );
+const App = () => {
+    return (
+        <Welcome name={'Federico'} age={30} />
+    )
 }
 
-export default Welcome;
+export default App

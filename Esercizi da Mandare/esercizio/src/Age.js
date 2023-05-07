@@ -1,14 +1,5 @@
-const Age = ({age = 19}) => {
-    
-    if(age >= 18) {
-        return (
-            <p>Your age is, {age}</p>
-        )
-    }else {
-        return(
-            <p>You're Young!</p>
-        )
-    }
-}
+const Age = (props) => {
+  return <p>Your age is, {props.age}</p>;
+};
 
-export default Age
+export default Age;
