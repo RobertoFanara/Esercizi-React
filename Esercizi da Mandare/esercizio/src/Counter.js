@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const Counter = () => {
+const Counter = (props) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setCount((oldCount) => oldCount + 1), 1000);
+    const id = setInterval(() => setCount((oldCount) => oldCount + props.increment), props.interval);
 
     return () => {
       clearInterval(id);

@@ -4,7 +4,7 @@ import Counter from "./Counter"
 
 const App = () => {
     return (
-      <Counter />
+      <Counter increment={2} interval={2000}/>
     )
 }
 
