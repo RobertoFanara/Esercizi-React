@@ -2,7 +2,7 @@ import Welcome from "./Welcome";
 
 const App = () => {
     return (
-        <Welcome name={'Federico'}  />
+        <Welcome name={'Federico'}  age={57}/>
     )
 }
 
