@@ -4,7 +4,7 @@ const Welcome = (props) => {    // What happens if the name prop is a JSX expres
   return (                                                          // the name will be bold
     <>
       <p>Welcome, {props.name}!</p>
-      {props.age >= 18 && props.age <= 65  ? <Age age={props.age}/> : <p>age is not defined</p>}
+      {props.age >= 18 && props.age <= 65 && props.name === "John"  ? <Age age={props.age}/> : <p>age is not defined</p>}
     </>
   );
 }
