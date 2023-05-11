@@ -16,7 +16,6 @@ const Counter = (props) => {
   return (
     <>
       <CounterDisplay number={count}/>
-      
     </>
   );
 };
