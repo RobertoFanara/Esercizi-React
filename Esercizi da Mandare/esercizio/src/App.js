@@ -1,29 +1,50 @@
-import React from "react"
-import { useState } from "react";
-import Login from "./Login"
-import { useRef } from "react"
+import React, {createRef} from "react";
+import UncontrolledLogin from "./UncontrolledLogin"
 
-export default function HandleForm() {
+export default class App extends React.Component {
+    _formRef = createRef()
 
-  const [text, setText] = useState("");
-  const [pass, setPass] = useState("");
+    handleFormSubmit = (event) => {
+        event.preventDefault()
 
-  const autoComplete = (e) => {
-    setText({ name: e.target.value });
+        const username = event.target.elements.username.value
+        const password = event.target.elements.password.value
+
+        console.log({username,password})
+    }
+
+  state = {
+    name: "",
+    password: "",
   };
 
-  const autoComplete2 = (e) => {
-    setPass({ pass: e.target.value });
+  handleFormPrefill = () => {
+    this._formRef.current.elements.username.value = "Johnny"
+    this._formRef.current.elements.password.value = "12345"
+  }
+
+  autoComplete = (e) => {
+    this.setState({
+      name: e.target.value,
+    });
   };
 
-  const input = useRef(null)
-  const input2 = useRef(null)
+  autoComplete2 = (e) => {
+    this.setState({
+      password: e.target.value,
+    });
+  };
 
-  return (
-    <form>
-      <input type="text" ref={input} onChange={autoComplete} />
-      <input type="password" ref={input2} onChange={autoComplete2} />
-      <Login text={text} pass={pass} input={input} input2={input2}/>
-    </form>
-  );
+  render() {
+    return (
+      <>
+        <form ref={this._formRef} onSubmit={this.handleFormSubmit}>
+          <input autoFocus name="username" type="text" onChange={this.autoComplete} />
+          <input name="password" type="password" onChange={this.autoComplete2} />
+
+          <UncontrolledLogin name={this.state.name} password={this.state.password} form={this.handleFormPrefill}/>
+        </form>
+      </>
+    );
+  }
 }
