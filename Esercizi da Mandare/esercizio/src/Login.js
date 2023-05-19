@@ -10,10 +10,18 @@ export default class Login extends React.Component {
     console.log(memorizedValues)
     }
 
+    onReset = (event) => {
+        event.preventDefault();
+        this.props.input.current.value = ""
+        this.props.input2.current.value = ""
+    };
+
+
     render(){
         return(
             <>
             <button disabled={!this.props.text || !this.props.pass} onClick={this.onLogin}>Login</button>
+            <button disabled={!this.props.text || !this.props.pass} onClick={this.onReset}>Reset</button>
             </>
         )
     }

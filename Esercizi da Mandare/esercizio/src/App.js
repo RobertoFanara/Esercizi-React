@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react";
 import Login from "./Login"
+import { useRef } from "react"
 
 export default function HandleForm() {
 
@@ -15,11 +16,14 @@ export default function HandleForm() {
     setPass({ pass: e.target.value });
   };
 
+  const input = useRef(null)
+  const input2 = useRef(null)
+
   return (
     <form>
-      <input type="text" onChange={autoComplete} />
-      <input type="password" onChange={autoComplete2} />
-      <Login text={text} pass={pass} />
+      <input type="text" ref={input} onChange={autoComplete} />
+      <input type="password" ref={input2} onChange={autoComplete2} />
+      <Login text={text} pass={pass} input={input} input2={input2}/>
     </form>
   );
 }
