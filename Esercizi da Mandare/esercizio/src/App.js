@@ -1,5 +1,6 @@
 import React from "react";
-import DisplayLanguage, { LanguageContext } from "./DisplayLanguage";
+import DisplayLanguage from "./DisplayLanguage";
+import { LanguageContext } from "./LanguageContext"
 
 export default class App extends React.Component {
   state = {
