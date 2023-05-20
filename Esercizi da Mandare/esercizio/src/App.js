@@ -1,12 +1,12 @@
-import GithubUser from "./GithubUser"
+import GithubUserList from "./GithubUserList"
 
 const App = () => {
 
     return(
         <div>
-        <GithubUser username={"yangus98"}/>
+        <GithubUserList />
         </div>
     )
 }
 
-export default App 
+export default App

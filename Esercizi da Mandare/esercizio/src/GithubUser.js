@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const GithubUser= (props) => {
+const GithubUser = (props) => {
     const [data, setData]= useState(null)
 
     useEffect(() =>{
@@ -19,7 +19,7 @@ const GithubUser= (props) => {
         {data && (
         <>
         <div>
-        <h1>{data.name}</h1>
+        {data.name ? (<h1>{data.name}</h1>) : (<p><b>This account doesn't have login name!</b></p>)}
         <p>{data.login}</p>
         </div>
         </>
