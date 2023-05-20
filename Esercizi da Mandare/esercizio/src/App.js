@@ -1,18 +1,19 @@
-import Clickcounter from "./Clickcounter";
+import Clickcounter from "./Clickcounter"
 import { useState } from "react"
 
-const App = () => {
-    const [counter, setCounter] = useState(0);
-    const increase = () => {
-      setCounter(count => count + 1);
-    };
+const App= () => {
+    const [showCounter, setShowCounter] = useState(true)
 
-    const onCounterChange = () => {console.log(`Il counter ora è  ${counter}` )}
+    function handleToggleCounter(){
+        setShowCounter(val => !val)
+
+    }
 
     return(
-        <>
-        <Clickcounter increase={increase} counter={counter} change={onCounterChange({counter})}/>
-        </>
+        <div>
+        {showCounter ?(<p> <Clickcounter /></p>): false}
+        <button onClick={handleToggleCounter}>Remove component</button>
+        </div>
     )
 }
 
