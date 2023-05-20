@@ -1,20 +1,12 @@
-import Clickcounter from "./Clickcounter"
-import { useState } from "react"
+import GithubUser from "./GithubUser"
 
-const App= () => {
-    const [showCounter, setShowCounter] = useState(true)
-
-    function handleToggleCounter(){
-        setShowCounter(val => !val)
-
-    }
+const App = () => {
 
     return(
         <div>
-        {showCounter ?(<p> <Clickcounter /></p>): false}
-        <button onClick={handleToggleCounter}>Remove component</button>
+        <GithubUser username={"yangus98"}/>
         </div>
     )
 }
 
-export default App
+export default App 
