@@ -1,18 +1,27 @@
-import useGithubUser  from "./useGithubUser"
+import useGithubUser from "./useGithubUser";
 
-const GithubUser = ({username}) => {
-    const {data} = useGithubUser(username)
-    
-    return <div>
-        {data && (
+const GithubUser = ({ username }) => {
+  const { data, loading, error, onFetchUser } = useGithubUser(username);
+
+  function handleGetUserData(){
+    onFetchUser(username)
+  }
+
+  return (
+    <div>
+      <button onClick={handleGetUserData}>Load user data</button>
+      {data && (
         <>
-        <div>
-        <h1>{data.name}</h1>
-        <p>{data.login}</p>
-        </div>
+          <div>
+            {loading && <h1>Loading...</h1>}
+            {error && <h1>Error</h1>}
+            <h1>{data.name}</h1>
+            <p>{data.login}</p>
+          </div>
         </>
-        )}
+      )}
     </div>
+  );
 }
 
 export default GithubUser

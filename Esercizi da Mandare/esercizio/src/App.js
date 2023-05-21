@@ -1,9 +1,14 @@
+import { useState } from "react"
 import GithubUser from "./GithubUser"
-export default function App(){
+const App =() => {
+    const [username, setUsername] = useState("")
 
     return(
         <div>
-        <GithubUser username={"yangus98"}/>
+        <input value={username} onChange={(e) => setUsername(e.target.value)}/>
+        <GithubUser username={username}/>
         </div>
     )
 }
+
+export default App
