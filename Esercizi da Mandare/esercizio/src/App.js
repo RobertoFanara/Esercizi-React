@@ -1,11 +1,13 @@
-import FilteredList from "./FilteredList";
+import { Routes } from "react-router-dom"
+import { Route } from "react-router-dom"
+import Clickcounter from "./Clickcounter"
 
 const App = () => {
     return(
         <>
-        <ul>
-        <FilteredList />
-        </ul>
+        <Routes>
+            <Route path="/" element={<Clickcounter />} />
+        </Routes>
         </>
     )
 }
