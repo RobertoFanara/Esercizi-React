@@ -1,9 +1,11 @@
-import Clickcounter from "./Clickcounter"
+import FilteredList from "./FilteredList";
 
 const App = () => {
     return(
         <>
-        <Clickcounter />
+        <ul>
+        <FilteredList />
+        </ul>
         </>
     )
 }
