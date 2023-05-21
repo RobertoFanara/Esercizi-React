@@ -4,7 +4,7 @@ const App = () => {
 
     return(
         <div>
-        <GithubUser username={"RobertoFanara"}/>
+        <GithubUser username={null}/>
         </div>
     )
 }
