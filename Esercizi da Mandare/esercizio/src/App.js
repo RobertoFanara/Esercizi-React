@@ -1,16 +1,9 @@
-import React from "react"
-import useStoreInputs from "./useStoreInputs";
+import GithubUser from "./GithubUser"
+export default function App(){
 
-const HandleForm = () => {
-  const {onLogin, autoComplete, autoComplete2} = useStoreInputs()
-
-  return (
-    <form>
-      <input type="text" onChange={autoComplete} />
-      <input type="password" onChange={autoComplete2} />
-      <button onClick={onLogin} type="submit">Login</button>
-    </form>
-  );
+    return(
+        <div>
+        <GithubUser username={"yangus98"}/>
+        </div>
+    )
 }
-
-export default HandleForm
