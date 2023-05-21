@@ -1,7 +1,7 @@
 import GithubUser from "./GithubUser"
 import { useParams } from "react-router-dom"
 
-const ShowGithubUser = () => {
+export default function ShowGithubUser(){
     const {username} = useParams()
 
     return(
@@ -10,5 +10,3 @@ const ShowGithubUser = () => {
         </>
     )
 }
-
-export default ShowGithubUser
