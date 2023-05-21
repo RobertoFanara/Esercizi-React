@@ -1,11 +1,9 @@
-import GithubUserList from "./GithubUserList"
-
+import Clickcounter from "./Clickcounter"
 const App = () => {
-
     return(
-        <div>
-        <GithubUserList />
-        </div>
+        <>
+        <Clickcounter />
+        </>
     )
 }
 
