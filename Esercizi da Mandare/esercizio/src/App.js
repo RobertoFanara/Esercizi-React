@@ -1,14 +1,19 @@
-import { useState } from "react"
-import GithubUser from "./GithubUser"
-const App =() => {
-    const [username, setUsername] = useState("")
+import CarForm from "./CarForm"
 
-    return(
-        <div>
-        <input value={username} onChange={(e) => setUsername(e.target.value)}/>
-        <GithubUser username={username}/>
-        </div>
-    )
+const App = () => {
+
+  let initialData = {
+  name: "Lamborghini",
+  model: "Miura",
+  year: "2023",
+  color: "Rosso"
+  }
+
+return (
+      <>
+      <CarForm initialData={initialData}/>
+      </>
+    );
 }
 
 export default App
