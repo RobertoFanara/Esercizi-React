@@ -1,5 +1,6 @@
-import { Link, Outlet } from "react-router-dom";
-import {useState} from "react"
+import GithubUser from "./GithubUser"
+import { useState } from "react"
+import { Outlet } from "react-router-dom";
 
 const GithubUserList = () => {
 
@@ -13,11 +14,11 @@ const GithubUserList = () => {
         <div>
         <input onChange={(e) => setName(e.target.value)}/>
           <button onClick={handleAdd}>add</button>
-          {items.map((item, index) => {return <li index={index}><Link to={item}>{item}</Link></li>})}
-
-          <Outlet />
+          {items.map((item, index) => {return <li index={index}><GithubUser username={item}/></li>})}
+          <div>
+            <Outlet />
+          </div>
         </div>
-
     )
 }
 

@@ -10,18 +10,21 @@ const App = () => {
         <>
         <Routes>
            <Route path="users" >
-              <Route path="list" element={<GithubUserList />} >
-                <Route path=":username" element={<ShowGithubUser/>} />
+              <Route path=":username" element={<ShowGithubUser/>} />
+              <Route path="list" element={<GithubUserList />}>
+                <Route index element={<p>Add a user and select it</p>}/>
               </Route>
            </Route>
         </Routes>
 
-        <p><Link to="users/list/yangus98">Link to my repo...</Link></p>
+        <p><Link to="users/yangus98">Link to my repo...</Link></p>
         <p><Link to="/">Link to Homepage...</Link></p>
         <p><Link to="users/list">Link to the list...</Link></p>
+
+        <hr></hr>
+
         </>
     )
 }
 
 export default App
-
